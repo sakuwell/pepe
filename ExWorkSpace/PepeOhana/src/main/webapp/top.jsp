@@ -28,44 +28,45 @@
 %>
 
 <body>
-	<!-- ログイン済ヘッダー -->
 	<% if (isLoggedIn) { %>
+    <!-- ログイン済ヘッダー -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="images/pepe_ohana_logo.png" alt="ページロゴ" width="auto" height="70">
-          </a>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            	<%= userName %>さん
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">マイページ</a></li>
-              <li><a class="dropdown-item" href="#">ログアウト</a></li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">
+                <img src="images/pepe_ohana_logo.png" alt="ページロゴ" width="auto" height="70">
+            </a>
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    userName
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/ExeMyPage">マイページ</a></li>
+                    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/ExeLogout">ログアウト</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    <!-- ログイン済ヘッダーここまで -->
     <% } else { %>
     <!-- 未ログインヘッダー -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
     	<div class="container-fluid">
         	<a class="navbar-brand" href="#">
-            	<img src="images/pepe_ohana_logo.png" alt="ページロゴ" width="auto" height="70">
+          		<img src="images/pepe_ohana_logo.png" alt="ページロゴ" width="auto" height="70">
           	</a>
-        	<div class="dropdown">
-            	<button class="btn btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+         	<div class="btn-group">
+            	<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
              		 未ログイン
             	</button>
-            	<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              		<li><a class="dropdown-item" href="#">ログイン</a></li>
-              		<li><a class="dropdown-item" href="#">新規ユーザー登録</a></li>
+            	<ul class="dropdown-menu dropdown-menu-end">
+              		<li><a class="dropdown-item" href="WEB-INF/view/login.jsp">ログイン</a></li>
+              		<li><a class="dropdown-item" href="view/registUser.jsp">新規ユーザー登録</a></li>
             	</ul>
           	</div>
         </div>
     </nav>
-    <% } %>
     <!-- 未ログインヘッダーここまで -->
+    <% } %>
 
 
     <!-- ヒーロー画像 -->
@@ -76,20 +77,19 @@
         <!-- 検索フォームゾーン -->
         <div class="container">
             <div class="h4 pb-2 mb-4 text-black border-bottom border-black">
-                ねこまっち検索
+                ねこまっちんぐ
             </div>
                 <p>家族をさがしているネコがたくさんいます！</p>
             <!-- 猫カード -->
             <div class="row">
  				<!-- カードのコンテンツ -->
-                <div class="col-6 col-md-4 col-lg-3">
+               <!-- カードのコンテンツ -->
+               <div class="col-6 col-md-4 col-lg-3">
                     <div class="card mb-3">
-                        <img src="images/ねこ_1.jpg" class="card-img-top" alt="猫画像" style="width:100%">
+                        <img src="images/cat_1.jpg" style="height:180px; width: 100%; object-fit: cover;" class="card-img-top" alt="猫画像">
                         <div class="card-body">
-                            <h5 class="card-title text-center">ぺぺ<small> ちゃん</small></h5>
-                            <p class="card-text text-right">性別：男の子</p>
-                            <p class="card-text text-right">生後：0歳5か月</p>
-                            <p class="card-text text-right">描種：アメリカンショートヘアー</p>
+                            <h5 class="card-title text-center">Card with stretched link</h5>
+                            <p class="card-text text-right">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <div class="d-flex justify-content-center">
                                 <a href="#" class="stretched-link"></a>
                             </div>
@@ -149,25 +149,20 @@
     <!-- フッター -->
     <div class="text-center mt-4">
         <a class="icon-link icon-link-hover" href="#">
-            TOPへ
+            ページトップへ
         </a>
-    </div>
-    <div class="container">
-        <footer class="mt-3 d-flex flex-wrap justify-content-between align-items-center my-4 border-top">
-          <p class="col-md-4 mb-0 text-body-secondary">© 2023 pepeohana, Inc</p>
-          <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-      
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-          </ul>
-        </footer>
-    </div>
+	</div>
+	<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    	<div class="col-md-4 d-flex align-items-center ms-3">
+        	<a href="#" class="mb-3 me-2 mb-md-0"><img alt="ロゴ画像" src="images/nikukyu_logo.png" width="auto" height="40"></a>
+          	<span class="mb-3 mb-md-0 text-body-secondary">© 2023 pepeohana, Inc</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-3">
+            <li><a href="#"><img src=images/twitter_logo.png width="auto" height="25"></a></li>
+            <li class="ms-4"><a href="#"><img src=images/insta_logo.png width="auto" height="25"></a></li>
+            <li class="ms-4"><a href="#"><img src=images/facebook_logo.png width="auto" height="25"></a></li>
+        </ul>
+	</footer>
     <!-- フッター　ここまで -->
 
 </body>
