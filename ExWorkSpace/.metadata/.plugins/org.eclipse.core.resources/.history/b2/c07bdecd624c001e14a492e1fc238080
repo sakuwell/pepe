@@ -59,7 +59,7 @@
              		 未ログイン
             	</button>
             	<ul class="dropdown-menu dropdown-menu-end">
-              		<li><a class="dropdown-item" href="WEB-INF/view/login.jsp">ログイン</a></li>
+              		<li><a class="dropdown-item" href="WEB-INF/view/Login.jsp">ログイン</a></li>
               		<li><a class="dropdown-item" href="view/registUser.jsp">新規ユーザー登録</a></li>
             	</ul>
           	</div>
@@ -70,7 +70,7 @@
 
 
     <!-- ヒーロー画像 -->
-    <img src="#" class="img-fluid" alt="ヒーロー画像">
+    <img  src="images/hero_1.jpg"  alt="top画像" style="max-height:400px; width:100%; object-fit: cover;">
 
     <!-- ここから下　ページごとの内容 -->
     <div>
